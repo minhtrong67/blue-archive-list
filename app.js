@@ -172,6 +172,7 @@ document.addEventListener('keydown',e=>{const ty=/INPUT|TEXTAREA|SELECT/.test(do
  if(dlg.open&&!ty){if(e.key==='ArrowLeft')nav(-1);if(e.key==='ArrowRight')nav(1)}});
 const up=$('#up');addEventListener('scroll',()=>up.classList.toggle('on',scrollY>700),{passive:true});up.onclick=()=>scrollTo({top:0,behavior:mo()?'smooth':'auto'});
 
+document.addEventListener('click',e=>{const sd=$('#side');if(sd.classList.contains('open')&&!e.target.closest('#side,#fbtn'))sd.classList.remove('open')});
 /* ===== Khởi động + splash ===== */
 const sp=$('#splash'),t0=performance.now();
 render();

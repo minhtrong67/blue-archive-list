@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-# Thêm dòng Sitemap: https://your-domain.example/sitemap.xml khi deploy
+
+Sitemap: https://minhtrong67.github.io/blue-archive-list/sitemap.xml
