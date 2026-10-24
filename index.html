@@ -62,22 +62,25 @@ if(sessionStorage.getItem('ba-s'))r.className='nosplash'}catch(e){}})();</script
     <input id="q" type="text" inputmode="search" placeholder="Tìm tên, họ tên, seiyuu…  VD: school:abydos age>16" autocomplete="off" spellcheck="false" aria-label="Tìm kiếm">
     <kbd>/</kbd><button id="qc" class="cl" hidden aria-label="Xóa tìm kiếm"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 6l12 12M18 6L6 18"/></svg></button></label>
   <div class="ctl">
-    <select id="sort" aria-label="Sắp xếp"></select>
+    <label class="sel"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4"/></svg><select id="sort" aria-label="Sắp xếp"></select></label>
     <button class="btn" id="dir" title="Đổi chiều sắp xếp"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span></span></button>
     <button class="btn ic" id="view" title="Đổi kiểu hiển thị"></button>
-    <button class="btn ic only-m" id="fbtn" title="Bộ lọc"></button>
-    <button class="btn ic pri" id="set" title="Cài đặt"></button>
+    <button class="btn ic only-m" id="fbtn" title="Bộ lọc" aria-label="Bộ lọc" aria-expanded="false"></button>
   </div>
+  <button class="btn ic pri" id="set" title="Cài đặt" aria-label="Cài đặt"></button>
 </header>
 <div class="wrap">
-  <aside id="side">
-    <div class="side-h"><h2>Bộ lọc</h2><button class="btn" id="reset">Xóa lọc</button></div>
+  <div id="scrim"></div>
+  <aside id="side" aria-label="Bộ lọc">
+    <div class="grip" data-drag></div>
+    <div class="side-h"><h2>Bộ lọc</h2><button class="btn" id="reset">Xóa lọc</button><button class="btn ic only-m" data-sclose aria-label="Đóng bộ lọc"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     <div id="groups"></div>
+    <div class="side-f"><button class="btn pri" id="sapply" data-sclose>Xem kết quả</button></div>
   </aside>
   <main><p id="count" class="count" aria-live="polite"></p><div id="active" class="act"></div><div id="list" class="grid"></div></main>
 </div>
 <button id="up" class="btn ic pri" aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-<dialog id="dlg"></dialog><dialog id="cfg"></dialog><div id="toast" role="status"></div>
+<dialog id="dlg"></dialog><dialog id="cfg"></dialog><div id="toasts"><div class="tl" aria-live="polite"></div></div>
 <noscript><p style="padding:20px">Trang cần bật JavaScript để hiển thị danh sách học sinh Blue Archive.</p></noscript>
 <script>document.getElementById('list').innerHTML=Array(12).fill('<div class="card sk"><div class="ph"></div><div class="ci"><i></i><i></i><i></i></div></div>').join('')</script>
 <script src="data.js"></script>
